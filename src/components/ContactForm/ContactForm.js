@@ -1,5 +1,6 @@
 import ProtoTypes from 'prop-types';
 import { Component } from 'react';
+import styles from './ContactForm.module.css';
 
 class ContactForm extends Component {
   static propTypes = { onSubmit: ProtoTypes.func.isRequired };
@@ -25,9 +26,10 @@ class ContactForm extends Component {
     const { name, number } = this.state;
     return (
       <form onSubmit={this.handleSubmit}>
-        <label>
+        <label className={styles.form__label}>
           Name
           <input
+            className={styles.form__input}
             type="text"
             name="name"
             pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
@@ -37,9 +39,10 @@ class ContactForm extends Component {
             onChange={this.handleChange}
           />
         </label>
-        <label>
+        <label className={styles.form__label}>
           Number
           <input
+            className={styles.form__input}
             type="tel"
             name="number"
             pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"

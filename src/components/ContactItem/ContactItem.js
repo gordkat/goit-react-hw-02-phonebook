@@ -1,8 +1,9 @@
 import ProtoTypes from 'prop-types';
+import styles from './ContactItem.module.css';
 const ContactItem = ({ name, number, id, onDelete }) => {
   return (
     <>
-      <span>
+      <span className={styles.contact}>
         {name}: {number}
       </span>
       <button type="button" onClick={() => onDelete(id)}>
